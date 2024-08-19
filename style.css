@@ -279,7 +279,8 @@ nav ul li a:hover{
   font-size: 1.157vw;
   font-family: 'Roboto Condensed', sans-serif;
   position: relative;
-  line-height: 2.4;
+  line-height: 2.86;
+  margin-top: -0.8vh;
 }
 .aboutMeP span, .skills {
   color: #0077b6;
