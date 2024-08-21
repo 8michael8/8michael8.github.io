@@ -6,7 +6,7 @@ var tablinks = document.getElementsByClassName("header-link");
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ["Student", "Coder", "Lifelong Learner", "Problem Solver", "Curious Technologist", "Tech Endusiast"];
+const textArray = ["Student", "Coder", "Lifelong Learner", "Problem Solver", "Curious Technologist", "Tech Enthusiast"];
 const typingDelay = 100;
 const erasingDelay = 100;
 const newTextDelay = 1000;
