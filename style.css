@@ -357,14 +357,14 @@ nav ul li a:hover{
   position: absolute;
   left:4%;
 }
-.skillCol1 li::before, .skillCol2 li::before {
+.skillCol1 li::before, .skillCol2 li::before, .skillCol3 li::before {
   color: #555555;
   content: '▶';
   margin-right:1vw;
   
 }
 
-.skillCol1 ul, .skillCol2 ul{
+.skillCol1 ul, .skillCol2 ul, .skillCol3 ul{
   list-style: none;
 }
 
@@ -374,6 +374,13 @@ nav ul li a:hover{
   font-size: 1.1vw;
   position: absolute;
   left:30%;
+}
+.skillCol3 {
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 5vh;
+  font-size: 1.1vw;
+  position: absolute;
+  left:56%;
 }
 
 
