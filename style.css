@@ -247,10 +247,6 @@ nav ul li a:hover{
   pointer-events: none; /* Ensure that the gradient layer does not block interactions */
 }
 
-.col2 {
-  
-}
-
 .aboutMe {
   font-size: 13vw;
   font-weight: 600;
@@ -466,7 +462,7 @@ nav ul li a:hover{
   margin-top: 3vh;
   font-size: 0.9vw;
   width: 20%;
-  margin-left: 8vw;
+  margin-left: 15vw;
   height: 4vh;
   cursor: pointer;
   border: none;
@@ -478,7 +474,7 @@ nav ul li a:hover{
 
 .projectsList1 .col1 button i, .projectsList2 .col1 button i {
   font-size: 1.2vw;
-  left: 9vw;
+  left: 16vw;
   margin-top: -0.2vh;
   position: absolute;
 }
