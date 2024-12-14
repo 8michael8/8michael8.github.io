@@ -405,19 +405,19 @@ nav ul li a:hover{
   transform: translateX(18vw);
 }
 
-.projectsList1, .projectsList2 {
+.projectsList1, .projectsList2, .projectsList0{
   position: relative;
   background-color: rgba(255,255,255, 0.08);
   width: 100vw;
   height: 55vh;
   margin-top: 5vh;
 }
-.projectsList1 h1, .projectsList2 h1 {
+.projectsList1 h1, .projectsList2 h1, .projectsList0 h1{
   color:#0077b6;
   font-family: 'Courier New';
   margin-bottom: 2vh;
 }
-.projectsList1 .col1, .projectsList2 .col1 {
+.projectsList1 .col1, .projectsList2 .col1, .projectsList0 .col1 {
   margin-top: 5vh;
   position: absolute;
   left: 0%;
@@ -432,18 +432,18 @@ nav ul li a:hover{
   color: white;
 }
 
-.projectsList1 .tools, .projectsList2 .tools {
+.projectsList1 .tools, .projectsList2 .tools, .projectsList0 .tools {
   margin-top: 1vh;
   color: #0077b6;
 }
 
-.projectsList1 .tools::before, .projectsList2 .tools::before {
+.projectsList1 .tools::before, .projectsList2 .tools::before, .projectsList0 .tools::before {
   color: #555555;
   content: '▶';
   margin-right:1vw;
 }
 
-.projectsList1 .col2, .projectsList2 .col2 {
+.projectsList1 .col2, .projectsList2 .col2, .projectsList0 .col2 {
   width: 50%;
   height: 100%;
   left: 50%;
@@ -451,13 +451,18 @@ nav ul li a:hover{
   border: 0.6vw solid #0077b6;
 }
 
-.projectsList1 .col2 .macysVideo, .projectsList2 .col2 .sudokuVideo {
+.projectsList1 .col2 .macysVideo, .projectsList2 .col2 .sudokuVideo{
   width: 100%;
   height: 100%;
   object-fit: cover; 
 }
 
-.projectsList1 .col1 button, .projectsList2 .col1 button {
+.projectsList0 .col2 .macysVideo {
+  width: 100%;
+  height: 100%;
+}
+
+.projectsList1 .col1 button, .projectsList2 .col1 button, .projectsList0 .col1 button {
   color: white;
   margin-top: 3vh;
   font-size: 0.9vw;
@@ -472,7 +477,7 @@ nav ul li a:hover{
   text-align: center;
 }
 
-.projectsList1 .col1 button i, .projectsList2 .col1 button i {
+.projectsList1 .col1 button i, .projectsList2 .col1 button i, .projectsList0 .col1 button i {
   font-size: 1.2vw;
   left: 16vw;
   margin-top: -0.2vh;
@@ -484,7 +489,7 @@ nav ul li a:hover{
   color: white;
   width: 100%;
   height: 100vh;
-  margin-top: 70vh;
+  margin-top: 125vh;
 }
 .contactsTitle {
   font-size: 13vw;
