@@ -381,7 +381,7 @@ nav ul li a:hover{
 
 
 
-/*        Projects */
+/* Projects */
 
 #projects {
   color: white;
@@ -417,7 +417,7 @@ nav ul li a:hover{
   position: relative;
   background-color: rgba(255,255,255, 0.08);
   width: 100vw;
-  height: 60vh;
+  height: 65vh;
   margin-top: 5vh;
 }
 
@@ -442,6 +442,7 @@ nav ul li a:hover{
   font-family: 'Courier New';
   margin-bottom: 2vh;
 }
+
 .projectsList1 .col1, .projectsList2 .col1, .projectsList0 .col1, .projectsList3 .col1, .projectsList4 .col1 {
   margin-top: 5vh;
   position: absolute;
