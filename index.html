@@ -89,6 +89,13 @@
     <div class = "container3">
        <h1 class = "projectsTitle">PROJECTS <br></h1>
 
+       <div class = "projectSubTabs">
+         <button class = "subtab-link active-subtab" onclick = "openProjectTab(event, 'software')">Software Engineering</button>
+         <button class = "subtab-link" onclick = "openProjectTab(event, 'cyber')">Cybersecurity</button>
+       </div>
+
+       <div class = "project-category" id = "software-projects">
+
        <div class = "projectsList1">
         <div class = col1>
           <h1>Strangers</h1>
@@ -168,7 +175,23 @@
         </video>
           </div>
       </div>
-      
+
+      </div>
+
+      <div class = "project-category" id = "cyber-projects" hidden>
+        <div class = "projectsList1">
+          <div class = col1>
+            <h1>PhishyEmail</h1>
+            <p>Developed PhishyEmail, a Chrome extension and local backend that detects phishing emails in real time as users read them in Gmail and Outlook web. Designed a heuristic scoring engine analyzing sender legitimacy, URL structure, and message content, cross-referencing links against a live threat-intelligence feed (URLhaus) to flag lookalike and punycode domains, spoofed display names, and mismatched link text/href pairs. Prioritized user privacy by running all analysis locally, with the only external call being a daily threat-feed sync. Implemented a Manifest V3 content-script pipeline to extract and fingerprint open emails, and a FastAPI backend with a SQLite-backed verdict cache, rendering results as an inline warning banner using JavaScript, Python, and FastAPI.</p>
+            <p class =  "tools">Python, FastAPI, JavaScript, SQLite </p>
+            <button class = "githubMacys" onclick = "window.open('https://github.com/8Michael/PhishyEmail')"><i class="fab fa-github"></i>Code</button>
+          </div>
+          <div class = col2>
+            <img src = "files/phishing_example.png" class = "poster stretch">
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 

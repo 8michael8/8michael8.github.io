@@ -82,18 +82,7 @@ const aboutMe = document.querySelector('.aboutMe');
                 aboutMe.classList.remove('move');
                 aboutLink.classList.remove('active-link');
               }
-        }else if(entry.target.id == 'projects'){
-            if (entry.isIntersecting) {
-              projectsLink.classList.add('active-link');
-              projectsLink.classList.add('scroll');
-              projectsMe.classList.add('move');
-              
-            } else {
-              projectsLink.classList.remove('scroll');
-              projectsLink.classList.remove('active-link');
-              projectsMe.classList.remove('move');
-            }
-      }else if(entry.target.id == 'contacts'){
+        }else if(entry.target.id == 'contacts'){
           if (entry.isIntersecting) {
             contactsLink.classList.add('active-link');
             contactsLink.classList.add('scroll');
@@ -112,8 +101,28 @@ const aboutMe = document.querySelector('.aboutMe');
 
       observer.observe(header);
      observer.observe(about);
-    observer.observe(projects);
   observer.observe(contacts);
+
+  // #projects' height changes with the active project tab, so a fixed
+  // 0.5 threshold on the whole section can't reliably fire. Instead
+  // trigger once the viewport's vertical center crosses the section.
+  const projectsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        projectsLink.classList.add('active-link');
+        projectsLink.classList.add('scroll');
+        projectsMe.classList.add('move');
+      } else {
+        projectsLink.classList.remove('scroll');
+        projectsLink.classList.remove('active-link');
+        projectsMe.classList.remove('move');
+      }
+    });
+  }, {
+    threshold: 0,
+    rootMargin: '-50% 0px -50% 0px'
+  });
+  projectsObserver.observe(projects);
 
 
 
@@ -156,6 +165,23 @@ function opentab(tabname){
 
     tabname.currentTarget.classList.add("active-link");
     //document.getElementById(tabname).classList.add("active-tab");
+}
+
+/*=============================Projects Subtabs====================*/
+
+function openProjectTab(evt, category){
+    var categories = document.getElementsByClassName("project-category");
+    for(cat of categories){
+        cat.hidden = true;
+    }
+
+    var subtabs = document.getElementsByClassName("subtab-link");
+    for(subtab of subtabs){
+        subtab.classList.remove("active-subtab");
+    }
+
+    document.getElementById(category + "-projects").hidden = false;
+    evt.currentTarget.classList.add("active-subtab");
 }
 
 
