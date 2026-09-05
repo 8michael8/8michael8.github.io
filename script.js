@@ -56,6 +56,14 @@ const projectsMe = document.querySelector('.projectsTitle');
 
 const aboutMe = document.querySelector('.aboutMe');
 
+  const certifications = document.getElementById('certifications');
+  const certificationsLink = document.getElementById('certifications-link');
+  const certificationsTitle = document.querySelector('.certificationsTitle');
+
+  const awards = document.getElementById('awards');
+  const awardsLink = document.getElementById('awards-link');
+  const awardsTitle = document.querySelector('.awardsTitle');
+
   const contacts = document.getElementById('contacts');
   const contactsLink = document.getElementById('contacts-link');
   const contactsTitle = document.querySelector('.contactsTitle');
@@ -82,6 +90,16 @@ const aboutMe = document.querySelector('.aboutMe');
                 aboutMe.classList.remove('move');
                 aboutLink.classList.remove('active-link');
               }
+        }else if(entry.target.id == 'awards'){
+              if (entry.isIntersecting) {
+                awardsLink.classList.add('active-link');
+                awardsLink.classList.add('scroll');
+                awardsTitle.classList.add('move');
+              } else {
+                awardsLink.classList.remove('scroll');
+                awardsLink.classList.remove('active-link');
+                awardsTitle.classList.remove('move');
+              }
         }else if(entry.target.id == 'contacts'){
           if (entry.isIntersecting) {
             contactsLink.classList.add('active-link');
@@ -101,6 +119,7 @@ const aboutMe = document.querySelector('.aboutMe');
 
       observer.observe(header);
      observer.observe(about);
+  observer.observe(awards);
   observer.observe(contacts);
 
   // #projects' height changes with the active project tab, so a fixed
@@ -124,7 +143,25 @@ const aboutMe = document.querySelector('.aboutMe');
   });
   projectsObserver.observe(projects);
 
-
+  // #certifications' height changes with the active cert tab, so use the
+  // same center-crossing approach as #projects instead of a fixed threshold.
+  const certificationsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        certificationsLink.classList.add('active-link');
+        certificationsLink.classList.add('scroll');
+        certificationsTitle.classList.add('move');
+      } else {
+        certificationsLink.classList.remove('scroll');
+        certificationsLink.classList.remove('active-link');
+        certificationsTitle.classList.remove('move');
+      }
+    });
+  }, {
+    threshold: 0,
+    rootMargin: '-50% 0px -50% 0px'
+  });
+  certificationsObserver.observe(certifications);
 
 });
 
@@ -181,6 +218,23 @@ function openProjectTab(evt, category){
     }
 
     document.getElementById(category + "-projects").hidden = false;
+    evt.currentTarget.classList.add("active-subtab");
+}
+
+/*=============================Certifications Subtabs====================*/
+
+function openCertTab(evt, category){
+    var categories = document.getElementsByClassName("cert-category");
+    for(cat of categories){
+        cat.hidden = true;
+    }
+
+    var subtabs = document.getElementsByClassName("cert-subtab-link");
+    for(subtab of subtabs){
+        subtab.classList.remove("active-subtab");
+    }
+
+    document.getElementById(category + "-certgroup").hidden = false;
     evt.currentTarget.classList.add("active-subtab");
 }
 

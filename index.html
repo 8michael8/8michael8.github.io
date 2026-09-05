@@ -19,6 +19,8 @@
         <li><a class = "header-link active-link" onclick = "opentab('home')"id = "home-link" href = "#">Home</a></li>
         <li><a class = "header-link" onclick = "opentab('about')"id = "about-link"href = "#about">About</a></li>
         <li><a class = "header-link" onclick = "opentab('projects')" id = "projects-link" href = "#projects">Projects</a></li>
+        <li><a class = "header-link" onclick = "opentab('certifications')" id = "certifications-link" href = "#certifications">Certifications/Certificates</a></li>
+        <li><a class = "header-link" onclick = "opentab('awards')" id = "awards-link" href = "#awards">Awards</a></li>
         <li><a class = "header-link" onclick = "opentab('contacts')" id = "contacts-link" href = "#contacts">Contacts</a></li>
         <li><a href = "files/resume.pdf" target = "_blank">Resume</a></li>
       </ul>
@@ -49,31 +51,52 @@
           
         </div>
         <div class = "col1">
-          <p class = "aboutMeP"><span>MY NAME IS MICHAEL LEUNG.</span> I am an incoming senior majoring in Computer Science at the University at Buffalo with hands-on experience in full-stack development and applied AI. I am currently interning at AI Republic, where I built data analytics and context systems for database-driven LLM applications. I am also developing Strangers, a full-stack social connection web application used to connect students through <br> shared meals. Driven by curiosity and a love for problem-solving, I thrive on<br> tackling complex challenges in mathematics and software development.
+          <p class = "aboutMeP"><span>MY NAME IS MICHAEL LEUNG.</span> I am currently pursuing a Master of Science in Cybersecurity at Northeastern University after graduating summa cum laude from the University at Buffalo with a Bachelor of Science in Computer Science and a minor in Mathematics. I am currently a Software Engineering Intern at the Massachusetts Office of the State Auditor, where I develop Python-based data pipelines, automate government data collection, and contribute to the development and security<br> testing of an internal AI-powered audit research platform. Previously, I <br>interned at AI Republic, where I built data analytics and context systems <br>for database-driven LLM applications. With experience spanning cybersecurity, <br>artificial intelligence, full-stack development, and data engineering, I am driven by curiosity and a passion for solving complex technical challenges and building secure, impactful software.
           </p>
 
           <p class = "skills">TECHNICAL SKILLS:</p>
-          <div class = "skillCol1">
-            <ul>
-              
-              <li>Python</li>
-              <li>C, C#</li>
-              <li>Java</li>
-            </ul>
-          </div>
-          <div class = "skillCol2">
-            <ul>
-            <li>HTML & CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
+          <div class = "skillsGrid">
+            <div class = "skillCategory">
+              <h2 class = "skillTitle">Cybersecurity</h2>
+              <ul>
+                <li>Endpoint Security & Threat Defense</li>
+                <li>Incident Response</li>
+                <li>Threat Detection</li>
               </ul>
-          </div>
-          <div class = "skillCol3">
-            <ul>
-            <li>Linux</li>
-            <li>SQL</li>
-            <li>MongoDB</li>
+            </div>
+            <div class = "skillCategory">
+              <h2 class = "skillTitle">Programming Languages</h2>
+              <ul>
+                <li>Python</li>
+                <li>Java</li>
+                <li>C</li>
+                <li>JavaScript</li>
+                <li>SQL</li>
               </ul>
+            </div>
+            <div class = "skillCategory">
+              <h2 class = "skillTitle">Web Technologies</h2>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>React</li>
+              </ul>
+            </div>
+            <div class = "skillCategory">
+              <h2 class = "skillTitle">Databases</h2>
+              <ul>
+                <li>MongoDB</li>
+                <li>PostgreSQL</li>
+              </ul>
+            </div>
+            <div class = "skillCategory">
+              <h2 class = "skillTitle">Tools & Platforms</h2>
+              <ul>
+                <li>Linux</li>
+                <li>Wireshark</li>
+                <li>Git</li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class = "col3">
@@ -90,11 +113,25 @@
        <h1 class = "projectsTitle">PROJECTS <br></h1>
 
        <div class = "projectSubTabs">
-         <button class = "subtab-link active-subtab" onclick = "openProjectTab(event, 'software')">Software Engineering</button>
-         <button class = "subtab-link" onclick = "openProjectTab(event, 'cyber')">Cybersecurity</button>
+         <button class = "subtab-link active-subtab" onclick = "openProjectTab(event, 'cyber')">Cybersecurity</button>
+         <button class = "subtab-link" onclick = "openProjectTab(event, 'software')">Software Engineering</button>
        </div>
 
-       <div class = "project-category" id = "software-projects">
+       <div class = "project-category" id = "cyber-projects">
+        <div class = "projectsList1">
+          <div class = col1>
+            <h1>PhishyEmail</h1>
+            <p>Developed PhishyEmail, a Chrome extension and local backend that detects phishing emails in real time as users read them in Gmail and Outlook web. Designed a heuristic scoring engine analyzing sender legitimacy, URL structure, and message content, cross-referencing links against a live threat-intelligence feed (URLhaus) to flag lookalike and punycode domains, spoofed display names, and mismatched link text/href pairs. Prioritized user privacy by running all analysis locally, with the only external call being a daily threat-feed sync. Implemented a Manifest V3 content-script pipeline to extract and fingerprint open emails, and a FastAPI backend with a SQLite-backed verdict cache, rendering results as an inline warning banner using JavaScript, Python, and FastAPI.</p>
+            <p class =  "tools">Python, FastAPI, JavaScript, SQLite </p>
+            <button class = "githubMacys" onclick = "window.open('https://github.com/8Michael/PhishyEmail')"><i class="fab fa-github"></i>Code</button>
+          </div>
+          <div class = col2>
+            <img src = "files/phishing_example.png" class = "poster stretch">
+          </div>
+        </div>
+      </div>
+
+       <div class = "project-category" id = "software-projects" hidden>
 
        <div class = "projectsList1">
         <div class = col1>
@@ -135,19 +172,6 @@
           </div>
       </div>
 
-      <div class = "projectsList3">
-        <div class = col1>
-          <h1>AlgoRhythm Learner</h1>
-          <p>Collaborated in a team of four, utilizing agile methodologies, to develop a software application that visually teaches various data structures and algorithms. The application, hosted on an Apache server with a PHP backend, features a SQL and PHP based database called PHPMyAdmin for managing user information. We utilized React.js and JavaScript to deliver an interactive and dynamic user experience. Users can register and log into their accounts to save and keep track of their learning progress.</p>
-          <p class =  "tools">JavaScript, React.JS, PHP, SQL</p>
-          <button class = "githubMacys" onclick = "window.open('https://github.com/cse442-at-ub/fa24-semesterproject-algorhythm')"><i class="fab fa-github"></i>Code</button>
-        </div>
-        <div class = col2>
-        <video class="macysVideo" src="files/AlgoRhythm.mp4" autoplay loop muted>
-        </video>
-          </div>
-      </div>
-
       <div class = "projectsList2">
         <div class = col1>
           <h1>Sudoku Solver</h1>
@@ -178,23 +202,78 @@
 
       </div>
 
-      <div class = "project-category" id = "cyber-projects" hidden>
-        <div class = "projectsList1">
-          <div class = col1>
-            <h1>PhishyEmail</h1>
-            <p>Developed PhishyEmail, a Chrome extension and local backend that detects phishing emails in real time as users read them in Gmail and Outlook web. Designed a heuristic scoring engine analyzing sender legitimacy, URL structure, and message content, cross-referencing links against a live threat-intelligence feed (URLhaus) to flag lookalike and punycode domains, spoofed display names, and mismatched link text/href pairs. Prioritized user privacy by running all analysis locally, with the only external call being a daily threat-feed sync. Implemented a Manifest V3 content-script pipeline to extract and fingerprint open emails, and a FastAPI backend with a SQLite-backed verdict cache, rendering results as an inline warning banner using JavaScript, Python, and FastAPI.</p>
-            <p class =  "tools">Python, FastAPI, JavaScript, SQLite </p>
-            <button class = "githubMacys" onclick = "window.open('https://github.com/8Michael/PhishyEmail')"><i class="fab fa-github"></i>Code</button>
-          </div>
-          <div class = col2>
-            <img src = "files/phishing_example.png" class = "poster stretch">
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 
+  <!-- Certifications -->
+  <div id = "certifications">
+    <h1 class = "certificationsTitle">CERTIFICATIONS <br></h1>
+
+    <div class = "projectSubTabs">
+      <button class = "subtab-link cert-subtab-link active-subtab" onclick = "openCertTab(event, 'certifications')">Certifications</button>
+      <button class = "subtab-link cert-subtab-link" onclick = "openCertTab(event, 'certificates')">Certificates</button>
+    </div>
+
+    <div class = "cert-category" id = "certifications-certgroup">
+      <div class = "certList" onclick="window.open('https://www.credly.com/badges/9e08527e-b688-415a-819e-01d0b83604c1/public_url', '_blank')">
+        <div class = "certIcon"><i class="fas fa-shield-alt"></i></div>
+        <div class = "certInfo">
+          <h1>CompTIA Security+</h1>
+          <p class = "tools">Issued February 2026</p>
+        </div>
+      </div>
+
+      <div class = "certList" onclick="window.open('https://www.credly.com/badges/9e08527e-b688-415a-819e-01d0b83604c1/public_url', '_blank')">
+        <div class = "certIcon"><i class="fas fa-network-wired"></i></div>
+        <div class = "certInfo">
+          <h1>CompTIA Network+</h1>
+          <p class = "tools">Issued May 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <div class = "cert-category" id = "certificates-certgroup" hidden>
+      <div class = "certList" onclick="window.open('https://github.com/8Michael', '_blank')">
+        <div class = "certIcon"><i class="fab fa-google"></i></div>
+        <div class = "certInfo">
+          <h1>Google Cybersecurity Certificate</h1>
+          <p>Foundations of Cybersecurity, Manage Security Risks, Networks and Network Security, Linux and SQL, Assets, Threats and Vulnerabilities, Detection and Response.</p>
+        </div>
+      </div>
+
+      <div class = "certList" onclick="window.open('https://github.com/8Michael', '_blank')">
+        <div class = "certIcon"><i class="fas fa-user-shield"></i></div>
+        <div class = "certInfo">
+          <h1>Cyber Incident Response Specialization Certificate</h1>
+          <p>Intrusion Detection and Prevention, Network Monitoring, Malware Protection, Data Security, Endpoint Detection and Response, Network Security, Threat Detection, Incident Response.</p>
+        </div>
+      </div>
+
+      <div class = "certList" onclick="window.open('https://github.com/8Michael', '_blank')">
+        <div class = "certIcon"><i class="fas fa-lock"></i></div>
+        <div class = "certInfo">
+          <h1>Mastering Endpoint Security & Threat Defense Certificate</h1>
+          <p>Cyber Threat Hunting, Threat Detection, Endpoint Security, Hardening, System Monitoring, Intrusion Detection and Prevention, Zero Trust Network Access, Authentications, Threat Management.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Awards -->
+  <div id = "awards">
+    <h1 class = "awardsTitle">AWARDS <br></h1>
+
+    <div class = "awardsList1">
+      <div class = col1>
+        <h1>Citation of Recognition</h1>
+        <p>Received an official citation from the Auditor of the Commonwealth in recognition of extraordinary work and contributions during the OSA Summer 2026 internship program.</p>
+        <p class = "tools">Massachusetts Office of the State Auditor</p>
+      </div>
+      <div class = col2>
+        <img src = "files/citation.jpg" class = "poster">
+      </div>
+    </div>
+  </div>
 
   <!-- Contacts -->
   <div id = "contacts">
